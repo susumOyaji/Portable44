@@ -1,3 +1,4 @@
+using Portable44.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,8 +12,9 @@ namespace Portable44
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
-		}
+			//MainPage = new MainPageView();
+            MainPage = new MainPageListView();
+        }
 
 		protected override void OnStart ()
 		{
