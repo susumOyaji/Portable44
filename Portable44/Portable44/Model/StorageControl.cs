@@ -3,7 +3,7 @@ using PCLStorage;
 using System.Threading.Tasks;
 
 
-namespace StockManager
+namespace Portable44
 {
     public static class StorageControl
     {

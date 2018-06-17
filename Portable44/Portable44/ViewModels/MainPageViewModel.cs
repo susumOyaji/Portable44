@@ -13,7 +13,7 @@ namespace Portable44.ViewModels
     {
         public ICommand SelectCommand { private set; get; }
         //PageViewModel[] PageViewModels;
-
+        public ObservableCollection<Price> PriceSelectPages { get; private set; }
 
       
 
@@ -25,7 +25,7 @@ namespace Portable44.ViewModels
 
             // var tabbedPageViewModels = new TabbedPageViewModel[]
             //{
-            //SelectPages = new ObservableCollection<PageViewModel>();
+            PriceSelectPages = new ObservableCollection<Price>();
             //new TabbedPage2ViewModel(),
             //new TabbedPage1ViewModel(),
             //new TabbedPage2ViewModel(),
@@ -40,7 +40,7 @@ namespace Portable44.ViewModels
 
 
 
-        public void Selecter(object sender)
+        public async void Selecter(object sender)
         {
             //var SourceBool = (string)sender.CommandParameter;//FirstLastName (Prev_day or Percent)
 
@@ -97,11 +97,12 @@ namespace Portable44.ViewModels
                     new Page2ViewModel{ Title2 = "Item16"}
                     };
 
-
+                // UTF8のファイルの書き込み Edit. 
+                string write = await StorageControl.PCLSaveCommand("6758,200,1665\n9837,200,712\n6976,200,1846\n6502,0,0");//登録データ書き込み
                 List<Price> pricesanser = await Models.PasonalGetserchi();//登録データの現在値を取得する
                 foreach (Price item in pricesanser)
                 {
-                    SelectPages.Add(new Price
+                    PriceSelectPages.Add(new Price
                     {
                         Name = item.Name,// "Sony",
                         Stocks = item.Stocks,//保有数*
@@ -116,6 +117,7 @@ namespace Portable44.ViewModels
                         Polar = item.Polar
                         //FirstLastName = item.FirstLastName
                     });
+                    i = ++i;
                 }
 
 

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="PCLStorage" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,8 +19,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Model\StorageControl.cs" />
   </ItemGroup>
 </Project>

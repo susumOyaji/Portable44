@@ -51,6 +51,7 @@
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding Title2}" TextColor="Blue" VerticalOptions="Center" HorizontalOptions="Center"/>
                                     <Label Text="{Binding Title3}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Name}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

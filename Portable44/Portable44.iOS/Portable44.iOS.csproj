@@ -148,11 +148,14 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
+    <PackageReference Include="PCLStorage">
+      <Version>1.0.2</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Portable44\Portable44.csproj">
-      <Project>{11DBD305-F819-45EF-8359-A05115E0CEC8}</Project>
+      <Project>{A71207B0-6E73-4E6E-A79F-18CC3D9006FC}</Project>
       <Name>Portable44</Name>
     </ProjectReference>
   </ItemGroup>
