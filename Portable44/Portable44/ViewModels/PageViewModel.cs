@@ -4,9 +4,8 @@ namespace Portable44.ViewModels
 {
     public abstract class PageViewModel : BindableBase
     {
-
+       
         private string _Title1;
-
         public string Title1
         {
             get
@@ -21,7 +20,6 @@ namespace Portable44.ViewModels
 
 
         private string _Title2;
-
         public string Title2
         {
             get
@@ -31,10 +29,24 @@ namespace Portable44.ViewModels
             set
             {
                 this.SetProperty(ref this._Title2, value);
+                //this.OnPropertyChanged(nameof(Title2));
+
             }
         }
 
 
+        private string _Title3;
+        public string Title3
+        {
+            get
+            {
+                return this._Title3;
+            }
+            set
+            {
+                this.SetProperty(ref this._Title3, value);
+            }
+        }
 
 
     }
@@ -48,7 +60,7 @@ namespace Portable44.ViewModels
 
         public Page1ViewModel()
         {
-            this.Title1 = "TabbedPage1";
+            this.Title1 = null;//"TabbedPage1";
         }
 
     }
@@ -56,11 +68,8 @@ namespace Portable44.ViewModels
     {
         public Page2ViewModel()
         {
-            this.Title2 = "TabbedPage2";
-
-           
-
-
+            this.Title2 = null;// "Title2";
+            this.Title3 = null;
         }
 
     }

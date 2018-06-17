@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Portable44.Views.MainPageListView"
@@ -20,9 +20,9 @@
         <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
             <Button x:Name="Add" Text="Add." BorderColor="Lime" Command="{Binding SelectCommand }" CommandParameter="true"/>
 
-            <Button x:Name="Rankig" Text="Rankig" Command="{Binding SelectCommand }" CommandParameter="false"/>
+            <Button x:Name="Ranking" Text="Rankig(page2)" Command="{Binding SelectCommand }" CommandParameter="false"/>
 
-            <Button x:Name="Stock" Text="Stock" Command="{Binding SelectCommand }" CommandParameter="true"/>
+            <Button x:Name="Stock" Text="Stock(Page1)" Command="{Binding SelectCommand }" CommandParameter="true"/>
 
             <Button x:Name="Reload" Text="ReLoad" BorderColor="Lime" Command="{Binding SelectCommand }" CommandParameter="false"/>
 
@@ -50,7 +50,7 @@
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <Label Text="{Binding Title2}" TextColor="Blue" VerticalOptions="Center" HorizontalOptions="Center"/>
-                                    
+                                    <Label Text="{Binding Title3}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

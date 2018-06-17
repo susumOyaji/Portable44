@@ -16,4 +16,10 @@
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Model\StorageControl.cs" />
+  </ItemGroup>
 </Project>
