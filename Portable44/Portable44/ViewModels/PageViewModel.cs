@@ -1,4 +1,9 @@
 ﻿//using Microsoft.Practices.Prism.Mvvm;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Windows.Input;
+using System;
+
 
 namespace Portable44.ViewModels
 {
@@ -63,6 +68,18 @@ namespace Portable44.ViewModels
             }
         }
 
+        private string _stocks;
+        public string Stocks
+        {
+            get
+            {
+                return this._stocks;
+            }
+            set
+            {
+                this.SetProperty(ref this._stocks, value);
+            }
+        }
 
     }
 
@@ -85,13 +102,16 @@ namespace Portable44.ViewModels
 
         public Page2ViewModel()
         {
-            this.Title2 = null;// "Title2";
-            this.Title3 = null;
+            //this.Title2 = null;// "Title2";
+            //this.Title3 = null;
+            //this.Name = null;
+            //this.Stocks = null;
         }
 
         public Page2ViewModel(Price price)
         {
             this.price = price;
+       
         }
     }
 
