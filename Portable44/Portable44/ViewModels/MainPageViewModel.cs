@@ -13,7 +13,7 @@ namespace Portable44.ViewModels
     {
         public ICommand SelectCommand { private set; get; }
         //PageViewModel[] PageViewModels;
-        public ObservableCollection<Price> PriceSelectPages { get; private set; }
+        public ObservableCollection<PageViewModel> PriceSelectPages { get; private set; }
 
       
 
@@ -25,7 +25,7 @@ namespace Portable44.ViewModels
 
             // var tabbedPageViewModels = new TabbedPageViewModel[]
             //{
-            PriceSelectPages = new ObservableCollection<Price>();
+            PriceSelectPages = new ObservableCollection<PageViewModel>();
             //new TabbedPage2ViewModel(),
             //new TabbedPage1ViewModel(),
             //new TabbedPage2ViewModel(),
@@ -102,7 +102,7 @@ namespace Portable44.ViewModels
                 List<Price> pricesanser = await Models.PasonalGetserchi();//登録データの現在値を取得する
                 foreach (Price item in pricesanser)
                 {
-                    PriceSelectPages.Add(new Price
+                    PriceSelectPages.Add(new ObservableCollection<PageViewModel>{new Page2ViewModel(new Price
                     {
                         Name = item.Name,// "Sony",
                         Stocks = item.Stocks,//保有数*
@@ -116,7 +116,7 @@ namespace Portable44.ViewModels
                         // ButtonColor = item.Polar,
                         Polar = item.Polar
                         //FirstLastName = item.FirstLastName
-                    });
+                   ) });
                     i = ++i;
                 }
 

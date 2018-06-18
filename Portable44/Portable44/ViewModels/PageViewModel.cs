@@ -49,9 +49,24 @@ namespace Portable44.ViewModels
         }
 
 
+
+        private string _name;
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this.SetProperty(ref this._name, value);
+            }
+        }
+
+
     }
 
-
+  
 
 
 
@@ -66,12 +81,18 @@ namespace Portable44.ViewModels
     }
     public sealed class Page2ViewModel : PageViewModel
     {
+        private Price price;
+
         public Page2ViewModel()
         {
             this.Title2 = null;// "Title2";
             this.Title3 = null;
         }
 
+        public Page2ViewModel(Price price)
+        {
+            this.price = price;
+        }
     }
 
 }
