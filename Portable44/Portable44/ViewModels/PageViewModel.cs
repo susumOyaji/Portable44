@@ -205,15 +205,24 @@ namespace Portable44.ViewModels
 
     public sealed class Page2ViewModel : PageViewModel
     {
-       
+        private Price price;
 
         public Page2ViewModel()
         {
 
         }
 
+        public Page2ViewModel(Price price)
+        {
+
+        }
+
+
+
 
     }
+
+   
 
 }
 
