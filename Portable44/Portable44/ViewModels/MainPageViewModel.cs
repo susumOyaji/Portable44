@@ -12,29 +12,19 @@ namespace Portable44.ViewModels
     public /*sealed*/ class MainPageViewModel : BindableBase
     {
         public ICommand SelectCommand { private set; get; }
+       // public object SelectPages { get; private set; }
+
         //PageViewModel[] PageViewModels;
         //public ObservableCollection<PageViewModel> SelectPages { get; private set; }
 
-      
+
 
 
         public MainPageViewModel()
         {
-            SelectCommand = new DelegateCommand<object>(Selecter);
-
-
-            // var tabbedPageViewModels = new TabbedPageViewModel[]
-            //{
-            //SelectPages = new ObservableCollection<PageViewModel>();
-            //new TabbedPage2ViewModel(),
-            //new TabbedPage1ViewModel(),
-            //new TabbedPage2ViewModel(),
-            // };
-
-            //this.TabbedPages = new ObservableCollection<TabbedPageViewModel>(tabbedPageViewModels);
-
            
-
+            SelectCommand = new DelegateCommand<object>(Selecter);
+            Selecter(false);//スタートアップ Stock 画面
 
         }
 
@@ -43,9 +33,9 @@ namespace Portable44.ViewModels
         public async void Selecter(object sender)
         {
             //var SourceBool = (string)sender.CommandParameter;//FirstLastName (Prev_day or Percent)
-
+            SelectPages = new ObservableCollection<PageViewModel>();//初期化
             //PageViewModel[] PageViewModels;
-           
+
             var disp = Convert.ToBoolean(sender);
 
             if (disp == true)
@@ -75,35 +65,28 @@ namespace Portable44.ViewModels
             }
             else
             {
-
-                //PageViewModels = new PageViewModel[]{new Page2ViewModel()};
-
-                this.SelectPages = new ObservableCollection<PageViewModel>{
-                    new Page2ViewModel{ Title2 = "Item1",Title3="Item1-2"},
-                    new Page2ViewModel{ Title2 = "Item2"},
-                    new Page2ViewModel{ Title2 = "Item3"},
-                };
-
+             
                 // UTF8のファイルの書き込み Edit. 
                 string write = await StorageControl.PCLSaveCommand("6758,200,1665\n9837,200,712\n6976,200,1846\n6502,0,0");//登録データ書き込み
                 List<Price> pricesanser = await Models.PasonalGetserchi();//登録データの現在値を取得する
+                int i = 0;
 
                 foreach (Price item in pricesanser)
                 {
                     SelectPages.Add(new Page2ViewModel
                     {
                         Name = item.Name,// "Sony",
-                        Stocks = Convert.ToString(item.Stocks),//保有数*
-                     //  Itemprice = item.Itemprice,//
-                    //    Prev_day = item.Prev_day,//前日比±**
-                    //    Realprice = item.Realprice,//現在値*// 1000,
-                    //    RealValue = item.RealValue,// 100,
-                    //    Percent = item.Percent,//前日比％**// "5"
-                    //    Gain = item.Gain,//損益
-                    //    Idindex = i,
-                    //    // ButtonColor = item.Polar,
-                    //    Polar = item.Polar
-                    //    //FirstLastName = item.FirstLastName
+                        Stocks = item.Stocks,//保有数*
+                        Itemprice = item.Itemprice,//
+                        Prev_day = item.Prev_day,//前日比±**
+                        Realprice = item.Realprice,//現在値*// 1000,
+                        RealValue = item.RealValue,// 100,
+                        Percent = item.Percent,//前日比％**// "5"
+                        Gain = item.Gain,//損益
+                        Idindex = i,
+                        //    // ButtonColor = item.Polar,
+                        Polar = item.Polar
+                        //    //FirstLastName = item.FirstLastName
                     });
 
                 }

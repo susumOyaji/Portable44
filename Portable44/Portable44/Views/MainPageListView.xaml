@@ -53,6 +53,14 @@
                                     <Label Text="{Binding Title3}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
                                     <Label Text="{Binding Name}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
                                     <Label Text="{Binding Stocks}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Itemprice}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Stocks}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Name}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Stocks}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Name}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Stocks}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Name}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Stocks}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

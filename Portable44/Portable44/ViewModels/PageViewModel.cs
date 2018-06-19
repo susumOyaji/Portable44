@@ -9,7 +9,7 @@ namespace Portable44.ViewModels
 {
     public abstract class PageViewModel : BindableBase
     {
-       
+
         private string _Title1;
         public string Title1
         {
@@ -17,7 +17,7 @@ namespace Portable44.ViewModels
             {
                 return this._Title1;
             }
-             set
+            set
             {
                 this.SetProperty(ref this._Title1, value);
             }
@@ -68,8 +68,8 @@ namespace Portable44.ViewModels
             }
         }
 
-        private string _stocks;
-        public string Stocks
+        private decimal _stocks;
+        public decimal Stocks
         {
             get
             {
@@ -81,9 +81,115 @@ namespace Portable44.ViewModels
             }
         }
 
+        private decimal _itemprice;
+        public decimal Itemprice
+        {
+            get
+            {
+                return this._itemprice;
+            }
+            set
+            {
+                this.SetProperty(ref this._itemprice, value);
+            }
+        }
+
+
+        private string _prev_day;
+        public string Prev_day
+        {
+            get
+            {
+                return this._prev_day;
+            }
+            set
+            {
+                this.SetProperty(ref this._prev_day, value);
+            }
+        }
+
+        private decimal _realprice;
+        public decimal Realprice
+        {
+            get
+            {
+                return this._realprice;
+            }
+            set
+            {
+                this.SetProperty(ref this._realprice, value);
+            }
+        }
+
+        private decimal _realvalue;
+        public decimal RealValue
+        {
+            get
+            {
+                return this._realvalue;
+            }
+            set
+            {
+                this.SetProperty(ref this._realvalue, value);
+            }
+        }
+
+        private string _percent;
+        public string Percent
+        {
+            get
+            {
+                return this._percent;
+            }
+            set
+            {
+                this.SetProperty(ref this._percent, value);
+            }
+        }
+
+        private decimal _gain;
+        public decimal Gain
+        {
+            get
+            {
+                return this._gain;
+            }
+            set
+            {
+                this.SetProperty(ref this._gain, value);
+            }
+        }
+
+        private decimal _idindex;
+        public decimal Idindex
+        {
+            get
+            {
+                return this._idindex;
+            }
+            set
+            {
+                this.SetProperty(ref this._idindex, value);
+            }
+        }
+
+        private string _polar;
+        public string Polar
+        {
+            get
+            {
+                return this._polar;
+            }
+            set
+            {
+                this.SetProperty(ref this._polar, value);
+            }
+        }
+
+
     }
 
-  
+
 
 
 
@@ -92,39 +198,22 @@ namespace Portable44.ViewModels
 
         public Page1ViewModel()
         {
-            this.Title1 = null;//"TabbedPage1";
+           
         }
 
     }
+
     public sealed class Page2ViewModel : PageViewModel
     {
-        private Price price;
+       
 
         public Page2ViewModel()
         {
-            //this.Title2 = null;// "Title2";
-            //this.Title3 = null;
-            //this.Name = null;
-            //this.Stocks = null;
+
         }
 
-        public Page2ViewModel(Price price)
-        {
-            this.price = price;
-       
-        }
+
     }
 
 }
 
-//      private void Sample()
-//{
-//    ItemList.Add(new Price
-//    {
-//        Name = "SampleSony",
-//        Stocks = 100,
-//        Itemprice = 2015,
-//        Realprice = 1000,
-//        RealValue = 100,
-//        Percent = "5"
-//    });
